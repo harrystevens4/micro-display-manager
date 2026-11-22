@@ -107,9 +107,9 @@ int greeter_get_login_info(void *state,char **user, char **password, int *deskto
 	//======== mainloop =======
 	for (;;){
 		// --------------- render window -------------
+		//fill login window with blanks in case it resizes
 		werase(login_window);
-		
-		//controls
+		wrefresh(login_window);
 
 		//regenerate required information to render
 		window_width = 2;
