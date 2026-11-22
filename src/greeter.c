@@ -156,7 +156,7 @@ int greeter_get_login_info(void *state,char **user, char **password, int *deskto
 				.events = POLLIN
 			};
 			//         wait at least 100 ms to stop eating the cpu
-			int result = poll(&fds,1,0);
+			int result = poll(&fds,1,100);
 			if (result < 0){
 				perror("poll");
 				break;
